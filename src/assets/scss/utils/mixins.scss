@@ -1,0 +1,65 @@
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+//media
+@mixin desktop {
+  @media screen and (max-width: 1920px){
+      @content;
+  }
+}
+@mixin desktopMd{
+  @media screen and (max-width: 1366px){
+      @content;
+  }
+}
+@mixin desktop1170{
+  @media screen and (max-width: 1170px){
+      @content;
+  }
+}
+@mixin desktopSm{
+  @media screen and (max-width: 1024px){
+      @content;
+  }
+}
+@mixin table {
+  @media screen and (max-width:  768px){
+      @content;
+  }
+}
+@mixin tableSm {
+  @media screen and (max-width:  640px){
+      @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 480px){
+      @content;
+  }
+}
+
+@mixin phoneSm {
+  @media screen and (max-width: 360px){
+      @content;
+  }
+}
+
+@mixin screen-max($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+
+@mixin screen-min($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
